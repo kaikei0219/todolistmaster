@@ -24,7 +24,7 @@ if (data) {
 }else{
 	//if data isn't empty
 	LIST =[];
-	id =0;
+	id = 0;
 }	
 
 //load items to the user's interface
@@ -37,7 +37,7 @@ function loadList(array){
 //clear the local storage
 clear.addEventListener("click",function(){
 	localStorage.clear();
-	localStorage.reload();
+	location.reload();
 })
 
 //Show todays date
@@ -82,7 +82,7 @@ document.addEventListener("keyup",function(even) {
 				trash :false
 			});
 			//add item to localstorage
-			localStoreage.setItem("TODO",JSON.stringify(LIST));
+			localStorage.setItem("TODO",JSON.stringify(LIST));
 
 			id++;
 		}
@@ -118,5 +118,6 @@ list.addEventListener("click", function(event){
 		removeToDo(element);
 	}
 	//add item to localstorage
-	localStoreage.setItem("TODO",JSON.stringify(LIST));
+	localStorage.setItem("TODO",JSON.stringify(LIST));
 });
+
